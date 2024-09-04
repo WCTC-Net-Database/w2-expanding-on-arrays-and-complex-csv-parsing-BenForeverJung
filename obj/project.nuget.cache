@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "67VDhcGAMxs=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Benju\\OneDrive\\Documents\\1-WCTC\\DotNet DB\\W2Assignment\\W2-assignment-template.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Benju\\.nuget\\packages\\csvhelper\\33.0.1\\csvhelper.33.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
