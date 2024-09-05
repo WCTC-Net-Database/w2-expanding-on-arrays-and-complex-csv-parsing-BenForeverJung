@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Runtime.InteropServices;
 
 class Program
 {
@@ -23,9 +24,10 @@ class Program
             Console.WriteLine("3. Level Up Character");
             Console.WriteLine("4. Exit");
             Console.Write("Enter The Number Of Your choice And Press Enter: ");
-            string choice = Console.ReadLine();
+            string mainMenuChoice = Console.ReadLine();
+            Console.WriteLine();
 
-            switch (choice)
+            switch (mainMenuChoice)
             {
                 case "1":
                     Console.WriteLine();
@@ -43,11 +45,15 @@ class Program
                     return;
                 default:
                     Console.WriteLine();
-                    Console.WriteLine("Invalid choice. Please try again.");
+                    Console.WriteLine("Invalid choice. Please Select the Number of your Choice and Press Enter.");
                     break;
             }
         }
     }
+
+    //--------- Main Break --------------------------------------------------------------
+
+
 
     // Method to Display all Characters
     static void DisplayAllCharacters(string[] lines)
@@ -129,28 +135,60 @@ class Program
 
         // Prompt for character details (name, class, level, hit points, equipment)
         Console.WriteLine();
-        Console.WriteLine("Enter your Character's Name And Press Enter: ");
+        Console.WriteLine("Enter Your Character's Name and Press Enter: ");
         var nameInput = Console.ReadLine();
         Console.WriteLine();
-        Console.WriteLine("Enter your Character's Class And Press Enter: ");
+        Console.WriteLine("Enter Your Character's Class and Press Enter: ");
         var classInput = Console.ReadLine();
         Console.WriteLine();
-        Console.WriteLine("Enter your Character's Level And Press Enter: ");
+        Console.WriteLine("Enter Your Character's Level and Press Enter: ");
         var levelInput = Console.ReadLine();
         Console.WriteLine();
-        Console.WriteLine("Enter your Character's Hit Power And Press Enter: ");
+        Console.WriteLine("Enter Your Character's Hit Power and Press Enter: ");
         var hitPowerInput = Console.ReadLine();
 
         Console.WriteLine();
-        Console.WriteLine("Enter your Character's First Piece of Equipment And Press Enter: ");
+        Console.WriteLine("Enter Your Character's First Piece of Equipment and Press Enter: ");
+        var firstEquipment = Console.ReadLine();
 
-        // DO NOT just ask the user to enter a new line of CSV data or enter the pipe-separated equipment string
-        // Append the new character to the lines array
-
-
+        //TODO  Create list of Equipment and add firstEquipment to the list
 
 
 
+        // TODO  Create Menu to ask if user wants to add aadditional equipment or not
+        //  TODO  Create switch statement to process additional equipment and add to existing list
+        // TODO  if user selects done with adding equipment - Create a loop to add list items to string with "|" to seperate items 
+        // TODO Append the new character to the lines array with auto generating ID
+        Console.WriteLine();
+        Console.WriteLine($"1. Add Another Piece of Equipment to Character {nameInput}");
+        Console.WriteLine($"2. Finished Adding Equipment. Build Character {nameInput}");
+        Console.WriteLine($"3. Do Not Build Character {nameInput}. Delete Progress and Return to Main Menu");
+        Console.Write("Enter The Number Of Your choice And Press Enter: ");
+        string buildCharacterMenuChoice = Console.ReadLine();
+        Console.WriteLine();
+
+        switch (buildCharacterMenuChoice)
+        {
+            case "1":
+                Console.WriteLine();
+                Console.WriteLine("Enter Your Character's Next Piece of Equipment and Press Enter: ");
+                //  Add additional Equipment to existing list
+                break;
+            case "2":
+                Console.WriteLine();
+                // TODO 
+                //  Build Character
+                //  Create Pipe delineated string from list of Equipment
+                //  Create Character ID
+                //  Append character attriputes to input.csv
+                //  Display character attributes and verify it is added to input.csv
+                break;
+            case "3":
+                return;
+            default:
+                Console.WriteLine();
+                Console.WriteLine("Invalid choice. Please Select the Number of your Choice and Press Enter.");
+                break;
 
 
 
@@ -158,6 +196,16 @@ class Program
 
 
 
+
+
+
+
+
+
+
+
+
+        }
     }
 
     // Method to Level up a Character

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("W2-assignment-template")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+580fbac35b3d8e1faf98e3c2b3ee18425f551804")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+92f540e1ecf7b75c408033740e9099285864d6fd")]
 [assembly: System.Reflection.AssemblyProductAttribute("W2-assignment-template")]
 [assembly: System.Reflection.AssemblyTitleAttribute("W2-assignment-template")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
