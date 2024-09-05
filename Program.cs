@@ -130,7 +130,7 @@ class Program
         // Implement logic to add a new character
 
         //  Get last CharacterID
-        var lastCharacterID = lines.Length - 1;
+        var nextCharacterID = lines.Length;
         // Console.WriteLine(lastCharacterID);  //  Test lastCharacterID output 
 
         // Prompt for character details (name, class, level, hit points, equipment)
@@ -149,64 +149,53 @@ class Program
 
         Console.WriteLine();
         Console.WriteLine("Enter Your Character's First Piece of Equipment and Press Enter: ");
-        var firstEquipment = Console.ReadLine();
+        var equipmentInput = Console.ReadLine();
 
-        //TODO  Create list of Equipment and add firstEquipment to the list
+        //  Use Do While loop to continu askiing for additional equipment until complete
+            // Add to equipment string with Pipe delineated format
+        //TODO Add input validation to Do While Inputs  - No Null for adding equipment and Y/N Questions
+        bool addEquipment = true;
 
-
-
-        // TODO  Create Menu to ask if user wants to add aadditional equipment or not
-        //  TODO  Create switch statement to process additional equipment and add to existing list
-        // TODO  if user selects done with adding equipment - Create a loop to add list items to string with "|" to seperate items 
-        // TODO Append the new character to the lines array with auto generating ID
-        Console.WriteLine();
-        Console.WriteLine($"1. Add Another Piece of Equipment to Character {nameInput}");
-        Console.WriteLine($"2. Finished Adding Equipment. Build Character {nameInput}");
-        Console.WriteLine($"3. Do Not Build Character {nameInput}. Delete Progress and Return to Main Menu");
-        Console.Write("Enter The Number Of Your choice And Press Enter: ");
-        string buildCharacterMenuChoice = Console.ReadLine();
-        Console.WriteLine();
-
-        switch (buildCharacterMenuChoice)
+        do
         {
-            case "1":
+        Console.WriteLine();
+            Console.WriteLine("Would You Like to Add Another Piece of Equipment? Enter Y for Yes or N for No. ");
+            var addEquipmentresponse = Console.ReadLine();
+            if (addEquipmentresponse == "Y" || addEquipmentresponse == "y")
+        {
                 Console.WriteLine();
                 Console.WriteLine("Enter Your Character's Next Piece of Equipment and Press Enter: ");
-                //  Add additional Equipment to existing list
-                break;
-            case "2":
-                Console.WriteLine();
-                // TODO 
-                //  Build Character
-                //  Create Pipe delineated string from list of Equipment
-                //  Create Character ID
-                //  Append character attriputes to input.csv
-                //  Display character attributes and verify it is added to input.csv
-                break;
-            case "3":
-                return;
-            default:
-                Console.WriteLine();
-                Console.WriteLine("Invalid choice. Please Select the Number of your Choice and Press Enter.");
-                break;
+                var nextEquipment = Console.ReadLine();
+                equipmentInput = (equipmentInput + "|" + nextEquipment);
+            }
+            else addEquipment = false;
+        } 
+        while (addEquipment == true);
+
+        // Combine all inputs into csv format and write to input.csv
+        var characterBuild = ($"{nextCharacterID},{nameInput},{classInput},{levelInput},{hitPowerInput},{equipmentInput}");
+        StreamWriter swInputCSV = new StreamWriter("input.csv",true);
+        string newLine = swInputCSV.NewLine;
+        swInputCSV.WriteLine(characterBuild);
+        swInputCSV.Flush();
+        swInputCSV.Close();
+
+        // ReRead the updated input.csv file
+        string filePath = "input.csv";
+        lines = File.ReadAllLines(filePath);
 
 
+        //  TODO Display character attributes and verify it is added to input.csv
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-        }
     }
+
+
+
+
+
+
+
+
 
     // Method to Level up a Character
     static void LevelUpCharacter(string[] lines)
