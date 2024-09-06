@@ -7,8 +7,8 @@
       "RelativeMoniker": "D:0:0:{A929E9B5-1006-4391-B55C-B23DB20DFB71}|W2-assignment-template.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A929E9B5-1006-4391-B55C-B23DB20DFB71}|W2-assignment-template.csproj|c:\\users\\benju\\onedrive\\documents\\1-wctc\\dotnet db\\w2assignment\\input.csv||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A929E9B5-1006-4391-B55C-B23DB20DFB71}|W2-assignment-template.csproj|solutionrelative:input.csv||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Benju\\OneDrive\\Documents\\1-WCTC\\DotNet DB\\W2Assignment\\bin\\Debug\\net6.0\\input.csv||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:bin\\Debug\\net6.0\\input.csv||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,29 +26,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "input.csv",
-              "DocumentMoniker": "C:\\Users\\Benju\\OneDrive\\Documents\\1-WCTC\\DotNet DB\\W2Assignment\\input.csv",
-              "RelativeDocumentMoniker": "input.csv",
-              "ToolTip": "C:\\Users\\Benju\\OneDrive\\Documents\\1-WCTC\\DotNet DB\\W2Assignment\\input.csv",
-              "RelativeToolTip": "input.csv",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
-              "WhenOpened": "2024-09-04T23:25:48.296Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Benju\\OneDrive\\Documents\\1-WCTC\\DotNet DB\\W2Assignment\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Benju\\OneDrive\\Documents\\1-WCTC\\DotNet DB\\W2Assignment\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAQwGUAAAAxAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Benju\\OneDrive\\Documents\\1-WCTC\\DotNet DB\\W2Assignment\\Program.cs*",
+              "RelativeToolTip": "Program.cs*",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAAABABAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-30T01:33:41.853Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "input.csv",
+              "DocumentMoniker": "C:\\Users\\Benju\\OneDrive\\Documents\\1-WCTC\\DotNet DB\\W2Assignment\\bin\\Debug\\net6.0\\input.csv",
+              "RelativeDocumentMoniker": "bin\\Debug\\net6.0\\input.csv",
+              "ToolTip": "C:\\Users\\Benju\\OneDrive\\Documents\\1-WCTC\\DotNet DB\\W2Assignment\\bin\\Debug\\net6.0\\input.csv",
+              "RelativeToolTip": "bin\\Debug\\net6.0\\input.csv",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
+              "WhenOpened": "2024-09-05T21:52:18.696Z"
             }
           ]
         }

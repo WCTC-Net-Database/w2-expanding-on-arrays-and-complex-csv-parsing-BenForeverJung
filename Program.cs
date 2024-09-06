@@ -10,8 +10,7 @@ class Program
 
 
     {
-        string filePath = "input.csv";
-        lines = File.ReadAllLines(filePath);
+        ReadFile();
 
         while (true)
         {
@@ -52,6 +51,14 @@ class Program
     }
 
     //--------- Main Break --------------------------------------------------------------
+
+    // Method to ReadFile
+
+    static void ReadFile()
+    {
+        string filePath = "input.csv";
+        lines = File.ReadAllLines(filePath);
+    }
 
 
 
@@ -131,7 +138,7 @@ class Program
 
         //  Get last CharacterID
         var nextCharacterID = lines.Length;
-        // Console.WriteLine(lastCharacterID);  //  Test lastCharacterID output 
+                    // Console.WriteLine(lastCharacterID);  //  Test lastCharacterID output 
 
         // Prompt for character details (name, class, level, hit points, equipment)
         Console.WriteLine();
@@ -158,11 +165,11 @@ class Program
 
         do
         {
-        Console.WriteLine();
+            Console.WriteLine();
             Console.WriteLine("Would You Like to Add Another Piece of Equipment? Enter Y for Yes or N for No. ");
             var addEquipmentresponse = Console.ReadLine();
             if (addEquipmentresponse == "Y" || addEquipmentresponse == "y")
-        {
+            {
                 Console.WriteLine();
                 Console.WriteLine("Enter Your Character's Next Piece of Equipment and Press Enter: ");
                 var nextEquipment = Console.ReadLine();
@@ -181,8 +188,7 @@ class Program
         swInputCSV.Close();
 
         // ReRead the updated input.csv file
-        string filePath = "input.csv";
-        lines = File.ReadAllLines(filePath);
+        ReadFile();
 
 
         //  TODO Display character attributes and verify it is added to input.csv
@@ -200,6 +206,104 @@ class Program
     // Method to Level up a Character
     static void LevelUpCharacter(string[] lines)
     {
+
+        //Declare variables to output
+        String characterID;
+        string characterName;
+        string characterClass;
+        string characterLevel;
+        string characterHP;
+        string characterEquipment;
+        
+        DisplayAllCharacters(lines);
+        Console.Write("Enter the ID Number of the character to level up: ");
+        string idToLevelUp = Console.ReadLine();
+        Console.WriteLine();
+        Console.Write("Enter New level for the Character : ");
+
+
+        // Loop through characters to find the one to level up
+        for (int i = 1; i < lines.Length; i++)
+        {
+            string line = lines[i];
+            string[] quotedNameArray = line.Split(',');
+            var quotedNameTest = quotedNameArray[1];
+
+            // TODO: Check if the name matches the one to level up
+            // Do not worry about case sensitivity at this point
+            if (line.StartsWith(idToLevelUp))
+            {
+
+                // Check if the name is quoted
+                if (quotedNameTest.StartsWith('"'))
+                {
+                    // Parse each line into individual character attributes
+                    // Remove quotes from the name if present
+                    // Replace | in quipment list with , and space for better readability
+
+                    String[] CharacterFields = line.Split(',');
+                    characterID = CharacterFields[0];
+                    var characterLastName = CharacterFields[1].Trim('"');
+                    var characterFirstName = CharacterFields[2].Trim('"');
+                    characterName = ($"{characterFirstName} {characterLastName}");
+                    characterClass = CharacterFields[3];
+                    characterLevel = CharacterFields[4];
+                    characterHP = CharacterFields[5];
+                    characterEquipment = CharacterFields[6].Replace("|", ", ");
+                }
+                else
+                {
+                    // Parse each line into individual character attributes
+                    // Remove quotes from the name if present
+                    // Replace | in quipment list with , and space for better readability
+
+                    String[] CharacterFields = line.Split(',');
+                    characterID = CharacterFields[0];
+                    characterName = CharacterFields[1].Trim('"');
+                    characterClass = CharacterFields[2];
+                    characterLevel = CharacterFields[3];
+                    characterHP = CharacterFields[4];
+                    characterEquipment = CharacterFields[5].Replace("|", ", ");
+                }
+                //Display Selected Characcter
+                Console.WriteLine();
+                Console.WriteLine($"You Selected");
+                Console.WriteLine($"ID = {characterID}");
+                Console.WriteLine($"Name = {characterName}");
+                Console.WriteLine($"Class = {characterClass}");
+                Console.WriteLine($"Level = {characterLevel}");
+                Console.WriteLine($"HP = {characterHP}");
+                Console.WriteLine($"Equipment List = {characterEquipment}");
+                Console.WriteLine();
+                //  Ask User for new level
+                Console.WriteLine();
+                Console.Write($"Enter New {characterClass} Level for the {characterName} ");
+                string newCharacterLevel = Console.ReadLine();
+
+                // Combine all inputs into csv format and write to input.csv
+                var characterBuild = ($"{characterID},{characterName},{characterClass},{newCharacterLevel},{characterHP},{characterEquipment}");
+                
+                //StreamWriter swInputCSV = new StreamWriter("input.csv", true);
+                //string newLine = swInputCSV.NewLine;
+                //swInputCSV.WriteLine(characterBuild);
+                //swInputCSV.Flush();
+                //swInputCSV.Close();
+
+                // ReRead the updated input.csv file
+                ReadFile();
+
+            }
+        }
+
+
+
+
+
+
+
+
+
+        /*
         Console.Write("Enter the name of the character to level up: ");
         string nameToLevelUp = Console.ReadLine();
 
@@ -226,5 +330,6 @@ class Program
                 break;
             }
         }
+        */
     }
 }
