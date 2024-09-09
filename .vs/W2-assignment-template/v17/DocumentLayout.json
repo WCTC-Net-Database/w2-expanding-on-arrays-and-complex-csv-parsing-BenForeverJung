@@ -30,9 +30,9 @@
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Benju\\OneDrive\\Documents\\1-WCTC\\DotNet DB\\W2Assignment\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Benju\\OneDrive\\Documents\\1-WCTC\\DotNet DB\\W2Assignment\\Program.cs*",
-              "RelativeToolTip": "Program.cs*",
-              "ViewState": "AgIAAHYAAAAAAAAAAAAAABABAABNAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Benju\\OneDrive\\Documents\\1-WCTC\\DotNet DB\\W2Assignment\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMkAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-30T01:33:41.853Z",
               "EditorCaption": ""
@@ -47,7 +47,8 @@
               "RelativeToolTip": "bin\\Debug\\net6.0\\input.csv",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002120|",
-              "WhenOpened": "2024-09-05T21:52:18.696Z"
+              "WhenOpened": "2024-09-05T21:52:18.696Z",
+              "EditorCaption": ""
             }
           ]
         }

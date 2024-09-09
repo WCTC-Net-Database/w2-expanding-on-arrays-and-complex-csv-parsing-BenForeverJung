@@ -187,20 +187,20 @@ class Program
         swInputCSV.Flush();
         swInputCSV.Close();
 
+        // Display character to user
+        Console.WriteLine();
+        Console.WriteLine($"Your Character Has Been Added to the Game!");
+        Console.WriteLine($"ID = {nextCharacterID}");
+        Console.WriteLine($"Name = {nameInput}");
+        Console.WriteLine($"Class = {classInput}");
+        Console.WriteLine($"Level = {levelInput}");
+        Console.WriteLine($"HP = {hitPowerInput}");
+        Console.WriteLine($"Equipment List = {equipmentInput}");
+        Console.WriteLine();
+
         // ReRead the updated input.csv file
         ReadFile();
-
-
-        //  TODO Display character attributes and verify it is added to input.csv
-
     }
-
-
-
-
-
-
-
 
 
     // Method to Level up a Character
@@ -281,55 +281,22 @@ class Program
                 string newCharacterLevel = Console.ReadLine();
 
                 // Combine all inputs into csv format and write to input.csv
-                var characterBuild = ($"{characterID},{characterName},{characterClass},{newCharacterLevel},{characterHP},{characterEquipment}");
+                var levelUpcharacterBuild = ($"{characterID},{characterName},{characterClass},{newCharacterLevel},{characterHP},{characterEquipment}");
                 
-                //StreamWriter swInputCSV = new StreamWriter("input.csv", true);
-                //string newLine = swInputCSV.NewLine;
-                //swInputCSV.WriteLine(characterBuild);
-                //swInputCSV.Flush();
-                //swInputCSV.Close();
-
-                // ReRead the updated input.csv file
-                ReadFile();
+                lines[i] = levelUpcharacterBuild;
+                //Notify User of update
+                Console.WriteLine();
+                Console.WriteLine($"You Have Updated {characterName} to Level {newCharacterLevel} {characterClass}");
 
             }
+
         }
 
+        //Write updated array to input.csv 
+        String Path = "input.csv";
+        File.WriteAllLines(Path, lines);
 
-
-
-
-
-
-
-
-        /*
-        Console.Write("Enter the name of the character to level up: ");
-        string nameToLevelUp = Console.ReadLine();
-
-        // Loop through characters to find the one to level up
-        for (int i = 1; i < lines.Length; i++)
-        {
-            string line = lines[i];
-
-            // TODO: Check if the name matches the one to level up
-            // Do not worry about case sensitivity at this point
-            if (line.Contains(nameToLevelUp))
-            {
-
-                // TODO: Split the rest of the fields locating the level field
-                // string[] fields = ...
-                // int level = ...
-
-                // TODO: Level up the character
-                // level++;
-                // Console.WriteLine($"Character {name} leveled up to level {level}!");
-
-                // TODO: Update the line with the new level
-                // lines[i] = ...
-                break;
-            }
-        }
-        */
+        //  ReRead the updated input.csv file
+        ReadFile();
     }
 }
